@@ -4,15 +4,15 @@ import { Favorite } from "../models"
 export const favoriteService = {
     findByUserId: async (userId: number) => {
         const favorites = await Favorite.findAll({
-            attributes:[['user_id','userId']],
+            attributes: [['user_id', 'userId']],
             where: { userId },
-            include:{
+            include: {
                 association: 'Course',
-                attributes:[
+                attributes: [
                     'id',
                     'name',
                     'synopsis',
-                    ['thumbnail_url','thumbnailUrl']
+                    ['thumbnail_url', 'thumbnailUrl']
                 ]
             }
         })
@@ -30,5 +30,14 @@ export const favoriteService = {
         })
 
         return favorite
+    },
+
+    delete: async (userId: number, courseId: number) => {
+        await Favorite.destroy({
+            where:{
+                userId,
+                courseId
+            }
+        })
     }
 }
