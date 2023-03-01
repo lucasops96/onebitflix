@@ -50,9 +50,19 @@ export const userService = {
         birth: Date
         email: string
     }) =>{
-        const [affected, updatedUsers] = await User.update(attributes,{ where: { id }, returning: true})
+        const [affectedRows, updatedUsers] = await User.update(attributes,{ where: { id }, returning: true})
 
         return updatedUsers[0]
+    },
+
+    updatePassword: async (id:number, password:string) =>{
+        const [affectedRows, updateUsers] = await User.update({ password }, {
+            where: { id },
+            returning: true,
+            individualHooks: true
+        })
+
+        return updateUsers[0]
     },
 
     getKeepWatchingList: async (id: number) => {
