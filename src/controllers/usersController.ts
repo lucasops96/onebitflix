@@ -30,7 +30,7 @@ export const usersController = {
                 birth
             })
 
-            return res.json(updateUser)
+            return res.status(200).json(updateUser)
         } catch (err) {
             if (err instanceof Error) {
                 return res.status(400).json({ message: err.message })
