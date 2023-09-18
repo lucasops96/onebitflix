@@ -1,15 +1,15 @@
 import { BrandingOptions } from "adminjs";
 
 export const brandingOptions: BrandingOptions = {
-        companyName: 'OneBitFlix',
-        logo: '/onebitflix.svg',
+        companyName: 'AcademyUp',
+        logo: '/logoAcUp.svg',
         theme: {
             colors: {
-                primary100: '#ff0043',
+                primary100: '#FDA002',
                 primary80: '#ff1a57',
                 primary60: '#ff3369',
                 primary40: '#ff4d7c',
-                    primary20: '#ff668f',
+                primary20: '#ff668f',
                 grey100: '#151515',
                 grey80: '#333333',
                 grey60: '#4d4d4d',
