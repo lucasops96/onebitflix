@@ -5,6 +5,6 @@ module.exports = {
         port: '5432',
         database: 'onebitflix_development',
         username: 'postgres',
-        password: 'eutireium2'
+        password: '1234567'
     }
 }
